@@ -8,6 +8,7 @@ export default function AnimationCard(id: string) {
   )
   return (
     <>
+      {error && "Error loading"}
       <div className="animation"></div>
       <div className="details">
         {loading && <Loading />}
