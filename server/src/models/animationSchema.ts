@@ -1,4 +1,4 @@
-const mongoose = require("mongoose")
+import mongoose from "mongoose"
 mongoose.connect("mongodb://localhost:3141/animation")
 
 const animationSchema = new mongoose.Schema({
@@ -10,9 +10,12 @@ const animationSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
-  likes: Number,
+  likes: {
+    type: Number,
+    defaultValue: 0,
+  },
   html: {
-    type: HTMLDivElement,
+    type: String,
     required: true,
   },
   css: {
@@ -22,7 +25,4 @@ const animationSchema = new mongoose.Schema({
 })
 
 const Animation = mongoose.model("Animation", animationSchema)
-
-module.exports = Animation
-
-export {}
+export default Animation

@@ -4,7 +4,8 @@ import useFetch from "../Hooks/useFetch"
 export default function AnimationCard(id: string) {
   const liked = useState(false)
   const { loading, error, value } = useFetch(
-    `https://localhost:1000/details/${id}`
+    `https://localhost:1000/details/${id}`,
+    { method: "POST" }
   )
   return (
     <>
