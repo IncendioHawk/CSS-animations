@@ -1,5 +1,4 @@
 import mongoose from "mongoose"
-mongoose.connect("mongodb://localhost:3141/animation")
 
 const animationSchema = new mongoose.Schema({
   creator: {
