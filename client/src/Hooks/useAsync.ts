@@ -8,7 +8,7 @@ export default function useAsync(callback: Function, dependencies = []) {
   const callbackMemoized = useCallback(() => {
     setLoading(true)
     setError(undefined)
-    setValue({ title: "Example", creator: "Archie", likes: 314159265 })
+    setValue(undefined)
     callback()
       .then(setValue)
       .catch(setError)
